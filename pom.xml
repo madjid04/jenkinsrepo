@@ -64,12 +64,24 @@
 
         <!-- Spring Boot Starter for Validation -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
         <!-- H2 Database for Development -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
@@ -77,6 +89,12 @@
 
         <!-- Lombok for Reducing Boilerplate Code -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
@@ -84,6 +102,12 @@
 
         <!-- MapStruct for DTO Mapping -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
@@ -91,6 +115,12 @@
 
         <!-- SpringDoc OpenAPI for API Documentation -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
@@ -98,6 +128,12 @@
 
         <!-- Spring Boot Starter for Testing -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -106,22 +142,46 @@
 
         <!-- Test Containers -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-testcontainers</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
         <!-- This connector will be used by the testcontainers -->
         <dependency>
+    <exclusions>
+        <exclusion>
+            <artifactId>tools</artifactId>
+            <groupId>com.sun</groupId>
+        </exclusion>
+    </exclusions>        
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
