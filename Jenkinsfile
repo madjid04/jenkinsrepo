@@ -25,6 +25,7 @@ pipeline {
                 }
             }
         }        
+/*
         stage('Testing ...') {
             steps {
                 sh "mvn test"
@@ -35,6 +36,7 @@ pipeline {
                 sh "mvn -B -DskipTests clean package"
             }
         }
+*/
         stage('Code coverage') {
             steps {
                 sh "mvn clean cobertura:cobertura install test -Dcobertura.report.format=xml"
