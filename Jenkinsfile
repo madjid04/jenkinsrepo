@@ -20,7 +20,9 @@ pipeline {
         }
         stage('Compling ...') {
             steps {
-                sh "mvn compile"
+                withMaven(maven: 'M3') {
+                    sh "mvn compile"
+                }
             }
         }        
         stage('Testing ...') {
