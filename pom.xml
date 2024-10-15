@@ -16,9 +16,9 @@
     <description>customer-api</description>
 
     <properties>
-        <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <springdoc-openapi-starter-webmvc-ui.version>2.6.0</springdoc-openapi-starter-webmvc-ui.version>
         <org.mapstruct.version>1.6.2</org.mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
@@ -30,58 +30,28 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>            
         </dependency>
 
         <!-- Spring Boot Starter for JPA -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <!-- Spring Boot Starter for Actuator -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- Spring Boot Starter for Validation -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
         <!-- H2 Database for Development -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
@@ -89,12 +59,6 @@
 
         <!-- Lombok for Reducing Boilerplate Code -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
@@ -102,12 +66,6 @@
 
         <!-- MapStruct for DTO Mapping -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
@@ -115,12 +73,6 @@
 
         <!-- SpringDoc OpenAPI for API Documentation -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
@@ -128,12 +80,6 @@
 
         <!-- Spring Boot Starter for Testing -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -142,46 +88,22 @@
 
         <!-- Test Containers -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-testcontainers</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
         <!-- This connector will be used by the testcontainers -->
         <dependency>
-    <exclusions>
-        <exclusion>
-            <artifactId>tools</artifactId>
-            <groupId>com.sun</groupId>
-        </exclusion>
-    </exclusions>        
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
@@ -232,24 +154,6 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.7</version>
-                <configuration>
-                    <formats>
-                        <format>xml</format>
-                    </formats>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>cobertura</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>                
         </plugins>
     </build>
 
