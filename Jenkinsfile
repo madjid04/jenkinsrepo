@@ -18,7 +18,6 @@ pipeline {
                 sh "ls -lart ./"    
             }
         }
-/*        
         stage('Compling ...') {
             steps {
                 withMaven(maven:'M3') {
@@ -27,44 +26,5 @@ pipeline {
             }
         }        
 
-        stage('Testing ...') {
-            steps {
-                sh "mvn test"
-            }
-        }        
-        stage('Building ...') {
-            steps {
-                sh "mvn -B -DskipTests clean package"
-            }
-        }
-*/
-        stage('Code coverage') {
-            steps {
-                withMaven(maven:'M3') {
-                    sh "mvn clean cobertura:cobertura install test -Dcobertura.report.format=xml"                    
-                }
-            }
-            post {
-                always {
-                    junit '**/test-reports/*.xml'
-                    //step([$class: 'CoberturaPublisher'], autoUpdateHealth: true, coberturaReportFile: '**/target/site/cobertura/*.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 2, onlyStable: false, sourceEncoding: 'ASCII')
-                    step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 2, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
-
-                }
-            }
-        }
-        stage('Building and sending results to Sonar ...') {
-            steps {
-                withSonarQubeEnv(installationName: 'SonarInstall', credentialsId: 'sonar_token') {
-                    sh 'mvn -B -DskipTests clean package sonar:sonar'
-                }
-            }
-        }                
-    }
-    post {
-        always { //Send an email to the person that broke the build
-            junit '**/target/surefire-reports/TEST-*.xml'
-            archiveArtifacts 'target/*.jar' 
-        }
     }
 }
