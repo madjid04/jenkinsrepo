@@ -18,6 +18,7 @@ pipeline {
                 sh "ls -lart ./"    
             }
         }
+/*        
         stage('Compling ...') {
             steps {
                 withMaven(maven:'M3') {
@@ -25,7 +26,7 @@ pipeline {
                 }
             }
         }        
-/*
+
         stage('Testing ...') {
             steps {
                 sh "mvn test"
@@ -39,7 +40,9 @@ pipeline {
 */
         stage('Code coverage') {
             steps {
-                sh "mvn clean cobertura:cobertura install test -Dcobertura.report.format=xml"
+                withMaven(maven:'M3') {
+                    sh "mvn clean cobertura:cobertura install test -Dcobertura.report.format=xml"                    
+                }
             }
             post {
                 always {
