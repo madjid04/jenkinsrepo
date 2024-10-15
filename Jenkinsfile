@@ -14,7 +14,7 @@ pipeline {
         stage('Checking out the repo') {
             steps {
                 checkout changelog: true, poll: true, scm: [$class: 'GitSCM', branches: [[name: '*/main']], 
-                extensions: scm.extensions, userRemoteConfigs: [[credentialsId: 'github_token', url: 'https://github.com/jpenekusu/pipeline2.git']]]
+                extensions: scm.extensions, userRemoteConfigs: [[credentialsId: 'github_token', url: 'https://github.com/madjid04/jenkinsrepo.git']]]
                 sh "ls -lart ./"    
             }
         }
